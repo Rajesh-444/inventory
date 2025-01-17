@@ -1,0 +1,10 @@
+{% extends 'inventory/base.html' %}
+
+{% block content %}
+	<h4>Are you sure you want to delete this sale order?</h4>
+	<form method="post">
+		{% csrf_token %}
+		<button type="submit" class="btn btn-danger">Yes, Delete</button>
+		<a href="{% url 'list-sale-orders' %}" class="btn btn-secondary">Cancel</a>
+	</form>
+{% endblock content %}

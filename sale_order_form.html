@@ -1,0 +1,12 @@
+{% extends 'inventory/base.html' %}
+
+{% block content %}
+	<h4>{{ form.instance.pk|yesno:"Edit,Add" }} Sale Order</h4>
+	<form method="post">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<div class="form-group">
+			<button type="submit" class="btn btn-primary">{{ form.instance.pk|yesno:"Save,Create" }}</button>
+		</div>
+	</form>
+{% endblock content %}
